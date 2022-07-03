@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import getProducts from "../../lib/products";
 import ItemList from "../ItemList/ItemList";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   // create state variable with products and loading state
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +18,6 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <div>
-      <h2>{greeting}</h2>
       {loading ? <h2>Cargando...</h2> : <ItemList products={products} />}
     </div>
   );

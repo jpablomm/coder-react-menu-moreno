@@ -60,7 +60,11 @@ const products = [
 export default function getProducts() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(products);
+      fetch("products.json")
+        .then((results) => results.json())
+        .then((jsonData) => {
+          resolve(jsonData);
+        });
     }, 2000);
   });
 }

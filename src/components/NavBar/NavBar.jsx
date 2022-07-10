@@ -1,41 +1,20 @@
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = () => {
-  function handleOnClick(e) {
-    e.preventDefault();
-  }
   return (
     <div className="navBar">
       <nav>
         <ul>
           <li id="website-title">
-            <a href="/" onClick={handleOnClick}>
-              Nombre de la tienda
-            </a>
+            <Link to="/">Nombre de la tienda</Link>
           </li>
           <li className="option">
-            <a href="/" onClick={handleOnClick}>
-              Acerca de nosotros
-            </a>
-          </li>
-          <li className="option">
-            <a href="/" onClick={handleOnClick}>
-              Catálogo
-            </a>
-          </li>
-          <li className="option">
-            <a href="/" onClick={handleOnClick}>
-              Mi cuenta
-            </a>
-          </li>
-          <li className="option">
-            <a href="/" onClick={handleOnClick}>
-              Mis pedidos
-            </a>
+            <Link to="/">Catálogo</Link>
           </li>
           <li className="cart">
-            <a href="/" onClick={handleOnClick}>
+            <a href="/">
               <CartWidget />
             </a>
           </li>

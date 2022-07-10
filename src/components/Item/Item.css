@@ -19,6 +19,7 @@
 }
 
 .card button {
+        list-style: none;
         border: none;
         outline: 0;
         display: inline-block;

@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import getProducts from "../../lib/products";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
-const ItemDetailContainer = ({ id }) => {
-  // create state variable with products and loading state
-  const [product, setProduct] = useState();
+const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts()
-      .then((data) => {
-        const selectedProduct = data.find((item) => item.id === id);
-        setProduct(selectedProduct);
-        setLoading(false);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    if (id) {
+      getProducts()
+        .then((data) => {
+          const selectedItem = data.find((item) => item.id == id);
+          setProduct(selectedItem);
+          setLoading(false);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [id]);
 
   return (
     <div>

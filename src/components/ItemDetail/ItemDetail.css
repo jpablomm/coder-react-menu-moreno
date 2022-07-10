@@ -1,4 +1,4 @@
-.card {
+.detail {
     flex-basis: 22%;
     border: 1px solid black;
     margin-bottom: 1rem;
@@ -12,7 +12,7 @@
     flex-wrap: wrap;
 }
 
-.card img {
+.detail img {
         border-radius: 5px 5px 0 0;
         margin-right: 25px;
         width: 600px;
@@ -25,7 +25,7 @@
         justify-content: space-between;
 }
 
-.card button {
+.detail button {
         border: none;
         outline: 0;
         display: inline-block;

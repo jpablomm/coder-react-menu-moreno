@@ -4,9 +4,8 @@ export default function getProducts() {
       fetch("http://localhost:3000/products.json")
         .then((results) => results.json())
         .then((jsonData) => {
-          console.log(jsonData);
           resolve(jsonData);
         });
-    }, 2000);
+    }, 1000);
   });
 }

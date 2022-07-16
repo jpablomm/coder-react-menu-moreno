@@ -1,4 +1,4 @@
-ul {
+#menuOptions {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -6,11 +6,11 @@ ul {
     background-color: #333;
   }
   
-  li {
+  #menuOptions li {
     float: left;
   }
   
-  li a {
+  #menuOptions li a {
     display: block;
     color: white;
     text-align: center;
@@ -18,7 +18,7 @@ ul {
     text-decoration: none;
   }
   
-  li.option a:hover {
+#menuOptions li.option a:hover {
     background-color: #111;
   }
 
@@ -27,10 +27,10 @@ ul {
     font-weight: bold;
 }
 
-.cart {
+#menuOptions .cart {
     float: right;
   }
 
-#cart-icon {
+  #menuOptions #cart-icon {
     height: 25px;
   }

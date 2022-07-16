@@ -1,12 +1,20 @@
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import { useState } from "react";
+import CartDetail from "../CartDetail/CartDetail";
 
 const NavBar = () => {
+  const [cartOpen, setCartOpen] = useState(false);
+
+  const showCart = () => {
+    setCartOpen(!cartOpen);
+  };
+
   return (
     <div className="navBar">
       <nav>
-        <ul>
+        <ul id="menuOptions">
           <li id="website-title">
             <Link to="/">Nombre de la tienda</Link>
           </li>
@@ -14,11 +22,12 @@ const NavBar = () => {
             <Link to="/">Catálogo</Link>
           </li>
           <li className="cart">
-            <a href="/">
+            <button onClick={showCart}>
               <CartWidget />
-            </a>
+            </button>
           </li>
         </ul>
+        {cartOpen ? <CartDetail /> : undefined}
       </nav>
     </div>
   );

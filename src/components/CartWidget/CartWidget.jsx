@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { ItemsContext } from "../CartContext/CartContext";
+
 const CartWidget = () => {
+  const { items } = useContext(ItemsContext);
   return (
     <div>
+      {items.map((item) => item.quantity).reduce((sum, curr) => sum + curr, 0)}
       <svg
         id="cart-icon"
         xmlns="http://www.w3.org/2000/svg"

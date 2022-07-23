@@ -1,15 +1,27 @@
 import { useState, useEffect } from "react";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
-const ItemListContainer = () => {
+const CategoryDetail = () => {
+  const { categoryName } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const db = getFirestore();
     const queryProducts = collection(db, "items");
-    getDocs(queryProducts)
+    const queryProductsFiltered = query(
+      queryProducts,
+      where("category", "==", categoryName)
+    );
+    getDocs(queryProductsFiltered)
       .then((res) => {
         setProducts(
           res.docs.map((prod) => {
@@ -22,7 +34,7 @@ const ItemListContainer = () => {
       })
       .catch((e) => console.log(e))
       .finally(() => setLoading(false));
-  }, []);
+  }, [products]);
 
   return (
     <div>
@@ -31,7 +43,7 @@ const ItemListContainer = () => {
   );
 };
 
-export default ItemListContainer;
+export default CategoryDetail;
 
 // GET FILTERED PRODUCTS
 // useEffect(() => {

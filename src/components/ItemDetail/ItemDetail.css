@@ -38,3 +38,31 @@
         width: 100%;
         font-size: 18px;
 }
+
+.detail #goToCart {
+        margin-top: 10px;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #4caf50;
+        font-style: normal;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+}
+#goToCart a {
+        margin-top: 10px;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        color: white;
+        background-color: #4caf50;
+        font-style: normal;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+}

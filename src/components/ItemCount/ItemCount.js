@@ -39,7 +39,7 @@ const ItemCount = ({ product }) => {
         />
         <button onClick={increaseQuantity}>+</button>
         {addBtnActive ? (
-          <button id="addButton">
+          <button id="goToCart">
             <Link to="/cart">Go to Cart</Link>
           </button>
         ) : (
